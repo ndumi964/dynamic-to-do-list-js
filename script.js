@@ -14,6 +14,27 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Please enter a task!');
             return;
         }
+        function addtask()
+        // Existing addTask code
+
+        // Save tasks to local storage
+        saveTasksToLocalStorage() {
+            const tasks = [];
+            const taskItems = tasklist.getElementBytagName('li');
+
+            for (let i = 0; i < taskItems.length; i++)  {
+                tasks.push(taskItems[i].textContent);
+            }
+            
+                localStorage.setItem('tasks', JSON, stringify('tasks'))
+        }
+
+        function loadTasksFromLocalStorage() {
+            const tasks = JSON, parse(localStorage.getItem('tasks'));
+            if (tasks) {
+                tasks.forEach(taskText => {
+                    const li = document.createElement('li');
+                    li.textContext = taskText;
 
         // Create new list item
         const listItem = document.createElement('li');
